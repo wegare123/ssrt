@@ -149,7 +149,7 @@ cat <<EOF>> /etc/crontabs/root
 */1 * * * *  autorekonek-ssrt
 # END AUTOREKONEKSSRT
 EOF
-sed -i 's/exit 0/ /g' /etc/rc.local
+sed -i '/^$/d' /etc/crontabs/root 2>/dev/null
 /etc/init.d/cron restart
 echo "Enable Suksess"
 sleep 2
