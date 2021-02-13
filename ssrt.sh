@@ -118,10 +118,7 @@ route add default gw 10.0.0.2 metric 0
 cat <<EOF> /usr/bin/ping-ssrt
 #!/bin/bash
 #ssrt (Wegare)
-while :
-do
-curl ipv4.icanhazip.com
-done
+fping -l 10.0.0.2
 EOF
 chmod +x /usr/bin/ping-ssrt
 /usr/bin/ping-ssrt > /dev/null 2>&1 &
