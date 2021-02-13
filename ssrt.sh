@@ -126,7 +126,7 @@ elif [ "${tools}" = "3" ]; then
 host="$(cat /root/akun/ssrt.txt | grep -i host | cut -d= -f2 | head -n1)" 
 route="$(cat /root/akun/ipmodem.txt | grep -i ipmodem | cut -d= -f2 | tail -n1)" 
 #killall screen
-killall -q badvpn-tun2socks ssr-local ping-ssrt
+killall -q badvpn-tun2socks ssr-local ping-ssrt fping
 route del 8.8.8.8 gw "$route" metric 0 2>/dev/null
 route del 8.8.4.4 gw "$route" metric 0 2>/dev/null
 route del "$host" gw "$route" metric 0 2>/dev/null
