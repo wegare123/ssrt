@@ -31,6 +31,8 @@ exit
 fi
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/ssrt/main/ssrt.sh" -O /usr/bin/ssrt
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/ssrt/main/autorekonek-ssrt.sh" -O /usr/bin/autorekonek-ssrt
+wget --no-check-certificate "https://github.com/wegare123/backup/blob/main/tun2socks?raw=true" -O /usr/bin/tun2socks
+chmod +x /usr/bin/tun2socks
 cek=$(cat /etc/openwrt_r* | grep -i RELEASE | cut -d= -f2 | cut -d"'" -f2 | cut -d. -f1)
 if [ "$cek" = "19" ]; then
 wget --no-check-certificate "https://github.com/wegare123/ssrt/blob/main/shadowsocksr-libev_1-0-0-wegare_aarch64_cortex-a53.ipk?raw=true" -O ~/ssr-libev.ipk
@@ -47,6 +49,7 @@ rm -r ~/install.sh
 mkdir -p ~/akun/
 touch ~/akun/ssrt.conf
 touch ~/akun/ssrt.txt
+touch ~/akun/ipmodem.txt 
 sleep 2
 echo "install selesai"
 echo "untuk memulai tools silahkan jalankan perintah 'ssrt'"
